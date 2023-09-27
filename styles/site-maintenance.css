@@ -1,0 +1,26 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.site-maintenance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 350px;
+  gap: 24px;
+}
+
+.site-maintenance img {
+  width: 85px;
+}
+
+.divider {
+  height: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background-color: #7678ed;
+}
