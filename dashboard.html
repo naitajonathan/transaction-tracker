@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction Tracker</title>
+    <link rel="stylesheet" href="../styles/normalize.css" />
+    <link rel="stylesheet" href="../styles/layout.css" />
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/buttons.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <link rel="stylesheet" href="../styles/googleicons.css" />
+  </head>
+  <body>
+    <nav>
+      <img src="../assets/tt-logo.svg" alt="Transaction Tracker Logo" />
+    </nav>
+    <div class="wrapper">
+      <button class="btn btn-primary">
+        <span class="material-symbols-rounded"> contract </span> New transaction
+      </button>
+      <form action="" class="card">
+        <div class="form-wrapper">
+          <input
+            type="text"
+            name="name"
+            id="transaction-name"
+            required
+            placeholder="Transaction Name"
+          />
+          <div class="input-select">
+            <select>
+              <option value="0">Select Category</option>
+              <option value="1">Home</option>
+              <option value="2">Lunch</option>
+              <option value="3">Transport</option>
+              <option value="4">Miscellaneous</option>
+            </select>
+            <span class="material-symbols-rounded"> keyboard_arrow_down </span>
+          </div>
+          <div class="input-amount">
+            <input
+              type="number"
+              name="amount"
+              id="transaction-amount"
+              placeholder="Transaction Amount"
+              required
+            />
+            <span>UGX</span>
+          </div>
+        </div>
+        <input type="submit" class="btn btn-primary" />
+      </form>
+    </div>
+    <div class="wrapper">
+      <div class="card card--history">
+        <div class="card__header">
+          <div class="flex-row justify-between items-center">
+            <h1 class="card__title">History</h1>
+            <div class="tab">
+              <button class="tab__button tab__button--current">All</button>
+              <button class="tab__button">Incomes</button>
+              <button class="tab__button">Expenses</button>
+            </div>
+          </div>
+          <div class="card__subtitle">All tranactions are in UGX</div>
+        </div>
+        <div class="card__body">
+          <div class="transaction-group">
+            <h2>Wednesday 27th September</h2>
+            <div class="transactions">
+              <div class="transaction">
+                <div class="transaction__header">
+                  <div class="badge">Home</div>
+                  <div
+                    class="transaction__type transaction__type--expense"
+                  ></div>
+                </div>
+                <div class="transaction__body">
+                  <div class="transaction__name">Shopping</div>
+                  <div class="transaction__amount">UGX 200,000</div>
+                </div>
+              </div>
+              <div class="transaction">
+                <div class="transaction__header">
+                  <div class="badge">Income</div>
+                  <div
+                    class="transaction__type transaction__type--income"
+                  ></div>
+                </div>
+                <div class="transaction__body">
+                  <div class="transaction__name">Salary - ATRO</div>
+                  <div class="transaction__amount">UGX 2,000,000</div>
+                </div>
+              </div>
+              <div class="transaction transaction--last">
+                <div class="transaction__header">
+                  <div class="badge">Subscription</div>
+                  <div
+                    class="transaction__type transaction__type--expense"
+                  ></div>
+                </div>
+                <div class="transaction__body">
+                  <div class="transaction__name">Netflix</div>
+                  <div class="transaction__amount">UGX 40,000</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

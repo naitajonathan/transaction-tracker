@@ -1,6 +1,7 @@
 /* colors */
 :root {
   --black-color: rgba(23, 22, 22, 1);
+  --black-10-color: rgba(23, 22, 22, 0.1);
   --black-5-color: rgba(23, 22, 22, 0.05);
   --dark-grey-color: #3d3d3d;
   --grey-color: #707070;
@@ -12,6 +13,7 @@
   --green-color: rgba(138, 201, 38, 1);
   --purple-color: rgba(118, 120, 237, 1);
   --purple-50-color: #bbbbf6;
+  --transparent-color: rgba(255, 255, 255, 0);
 
   --input-height: 40px;
 }
