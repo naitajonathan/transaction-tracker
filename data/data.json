@@ -3,16 +3,22 @@
     "date": "2023-08-17",
     "transactions": [
       {
-        "name": "dinner pizza",
+        "name": "Dinner Pizza",
         "amount": "28000",
-        "type": "paid",
-        "catergory": "home"
+        "type": "expense",
+        "catergory": "Home"
       },
       {
-        "name": "lunch",
+        "name": "Salary ATRO E&M",
+        "amount": "2000000",
+        "type": "income",
+        "catergory": "Income"
+      },
+      {
+        "name": "Lunch",
         "amount": "5000",
-        "type": "paid",
-        "catergory": "lunch"
+        "type": "expense",
+        "catergory": "Lunch"
       }
     ]
   },
@@ -20,22 +26,22 @@
     "date": "2023-08-16",
     "transactions": [
       {
-        "name": "boda",
+        "name": "Boda",
         "amount": "2000",
-        "type": "paid",
-        "catergory": "transport"
+        "type": "expense",
+        "catergory": "Transport"
       },
       {
-        "name": "shoe repair",
+        "name": "Shoe repair",
         "amount": "2000",
-        "type": "paid",
-        "catergory": "miscellaneous"
+        "type": "expense",
+        "catergory": "Miscellaneous"
       },
       {
-        "name": "lunch",
+        "name": "Lunch",
         "amount": "5000",
-        "type": "paid",
-        "catergory": "lunch"
+        "type": "expense",
+        "catergory": "Lunch"
       }
     ]
   },
@@ -43,16 +49,16 @@
     "date": "2023-08-15",
     "transactions": [
       {
-        "name": "internet",
+        "name": "Internet",
         "amount": "224000",
-        "type": "paid",
-        "catergory": "home"
+        "type": "expense",
+        "catergory": "Home"
       },
       {
-        "name": "lunch",
+        "name": "Lunch",
         "amount": "5000",
-        "type": "paid",
-        "catergory": "lunch"
+        "type": "expense",
+        "catergory": "Lunch"
       }
     ]
   }

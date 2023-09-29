@@ -73,6 +73,12 @@ nav img {
   color: var(--grey-color);
 }
 
+.card__body {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 32px;
+}
+
 /* transaction form */
 
 form .form-wrapper {
@@ -161,11 +167,11 @@ select:focus {
 .transactions {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: ;
 }
 
 .transaction-group h2 {
   font-size: 16px;
+  margin: 0px;
 }
 
 .transaction {
