@@ -1,19 +1,19 @@
 const transactionDisplay = document.querySelector("#transaction-display");
+const filePath = "../data/data.json";
+let transactionData = [];
 
 // fetch data from json file
 const loadData = async () => {
-  const response = await fetch("../data/data.json");
+  const response = await fetch(filePath);
   const data = await response.json();
-  return sortTransactions(data);
+  transactionData = sortTransactions(data);
+  return transactionData;
 };
 
 //sorting data
 const sortTransactions = (array) => {
   return array.sort((a, b) => new Date(b.date) - new Date(a.date));
 };
-
-const newDate = new Date("2023-09-27");
-console.log(newDate.getDay());
 
 //converting date from iso to string
 const daysOfWeek = [
@@ -72,7 +72,7 @@ const amountToString = (amount) => {
 };
 
 const displayTransactions = async () => {
-  const transactionData = await loadData();
+  transactionData = await loadData();
   let transactionHtml = transactionData
     .map((transactionGroup) => {
       const { date, transactions } = transactionGroup;
@@ -113,3 +113,43 @@ const displayTransactions = async () => {
 };
 
 displayTransactions();
+
+//  FORM IMPLEMENTATION //
+const transactionForm = document.getElementById("transaction-form");
+
+transactionForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  //get form input values
+  const name = cleanupValue(document.getElementById("transaction-name").value);
+  const category = cleanupValue(
+    document.getElementById("transaction-category").value
+  );
+  const amount = document.getElementById("transaction-amount").value;
+  const date = document.getElementById("transaction-date").value;
+  const type = category == "Income" ? "Income" : "Expense";
+
+  const transaction = { name, category, amount, type };
+
+  //adding transaction to local data
+  const index = transactionData.findIndex((item) => item.date === date);
+
+  if (index !== -1) {
+    transactionData[index].transactions.push(transaction);
+  } else {
+    transactionData.push({
+      date,
+      transactions: [transaction],
+    });
+  }
+
+  console.log(transactionData);
+  // const updatedData = JSON.stringify(transactionData);
+  // fs.writeFileSync(filePath, updatedData, "utf-8");
+  // displayTransactions();
+});
+
+const cleanupValue = (value) => {
+  const newValue = value.trim().toLowerCase();
+  return newValue[0].toUpperCase() + newValue.substring(1);
+};

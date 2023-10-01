@@ -22,7 +22,8 @@
       <button class="btn btn-primary">
         <span class="material-symbols-rounded"> contract </span> New transaction
       </button>
-      <form action="" class="card">
+      <form action="" class="card" id="transaction-form">
+        <h2 class="card__title">Log transaction</h2>
         <div class="form-wrapper">
           <input
             type="text"
@@ -31,16 +32,29 @@
             required
             placeholder="Transaction Name"
           />
-          <div class="input-select">
-            <select>
-              <option value="0">Select Category</option>
-              <option value="1">Home</option>
-              <option value="2">Lunch</option>
-              <option value="3">Transport</option>
-              <option value="4">Miscellaneous</option>
+          <!-- <div class="input-select">
+            <select id="transaction-category">
+              <option value="None">Select Category</option>
+              <option value="Home">Home</option>
+              <option value="Lunch">Lunch</option>
+              <option value="Transport">Transport</option>
+              <option value="Miscellaneous">Miscellaneous</option>
             </select>
             <span class="material-symbols-rounded"> keyboard_arrow_down </span>
-          </div>
+          </div> -->
+          <input
+            type="text"
+            name="category"
+            id="transaction-category"
+            list="transaction-category-list"
+            required
+            placeholder="Transaction Category"
+          />
+          <datalist id="transaction-category-list">
+            <option value="Home"></option>
+            <option value="Income"></option>
+            <option value="Miscellaneous"></option>
+          </datalist>
           <div class="input-amount">
             <input
               type="number"
@@ -51,6 +65,7 @@
             />
             <span>UGX</span>
           </div>
+          <input type="date" name="date" id="transaction-date" required />
         </div>
         <input type="submit" class="btn btn-primary" />
       </form>
@@ -59,7 +74,7 @@
       <div class="card card--history">
         <div class="card__header">
           <div class="flex-row justify-between items-center">
-            <h1 class="card__title">History</h1>
+            <h2 class="card__title">History</h2>
             <div class="tab">
               <button class="tab__button tab__button--current">All</button>
               <button class="tab__button">Incomes</button>
@@ -114,6 +129,7 @@
       </div>
     </div>
     <!-- scripts -->
-    <script src="./scripts/transaction.js"></script>
+    <script type="module" src="./scripts/transaction.js"></script>
+    <script type="module" src="./scripts/form.js"></script>
   </body>
 </html>

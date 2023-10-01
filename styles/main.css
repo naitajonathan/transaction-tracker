@@ -104,6 +104,10 @@ select:focus {
   border-color: var(--grey-color);
 }
 
+::placeholder {
+  color: var(--light-grey-color);
+}
+
 .input-amount {
   position: relative;
 }
