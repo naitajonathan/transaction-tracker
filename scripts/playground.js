@@ -84,3 +84,5 @@ if (index !== -1) {
 }
 
 console.log(transactionData);
+
+console.log(localStorage.getItem("transactions"));

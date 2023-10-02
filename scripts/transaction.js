@@ -1,13 +1,18 @@
 const transactionDisplay = document.querySelector("#transaction-display");
 const filePath = "../data/data.json";
 let transactionData = [];
+const response = await JSON.parse(localStorage.getItem("transactions"));
 
+window.onload = function () {
+  loadData();
+};
 // fetch data from json file
-const loadData = async () => {
-  const response = await fetch(filePath);
-  const data = await response.json();
-  transactionData = sortTransactions(data);
-  return transactionData;
+const loadData = () => {
+  // const response = await fetch(filePath);
+  // const data = await response.json();
+  // transactionData = await sortTransactions(data)
+  transactionData = sortTransactions(response);
+  displayTransactions();
 };
 
 //sorting data
@@ -71,8 +76,8 @@ const amountToString = (amount) => {
   return Number(amount).toLocaleString();
 };
 
-const displayTransactions = async () => {
-  transactionData = await loadData();
+const displayTransactions = async (data) => {
+  // transactionData = await loadData();
   let transactionHtml = transactionData
     .map((transactionGroup) => {
       const { date, transactions } = transactionGroup;
@@ -83,10 +88,10 @@ const displayTransactions = async () => {
                     ${transactions
                       .map((transaction) => {
                         return `
-                                <div class="transaction">
+                                <div class="transaction" id="${transaction.id}">
                                     <div class="transaction__header">
                                         <div class="badge">${
-                                          transaction.catergory
+                                          transaction.category
                                         }</div>
                                         <div class="transaction__type transaction__type--${
                                           transaction.type
@@ -112,8 +117,6 @@ const displayTransactions = async () => {
   transactionDisplay.innerHTML += transactionHtml;
 };
 
-displayTransactions();
-
 //  FORM IMPLEMENTATION //
 const transactionForm = document.getElementById("transaction-form");
 
@@ -127,9 +130,10 @@ transactionForm.addEventListener("submit", function (e) {
   );
   const amount = document.getElementById("transaction-amount").value;
   const date = document.getElementById("transaction-date").value;
-  const type = category == "Income" ? "Income" : "Expense";
+  const type = category == "Income" ? "income" : "expense";
+  const id = new Date().getTime();
 
-  const transaction = { name, category, amount, type };
+  const transaction = { id, name, category, amount, type };
 
   //adding transaction to local data
   const index = transactionData.findIndex((item) => item.date === date);
@@ -144,9 +148,8 @@ transactionForm.addEventListener("submit", function (e) {
   }
 
   console.log(transactionData);
-  // const updatedData = JSON.stringify(transactionData);
-  // fs.writeFileSync(filePath, updatedData, "utf-8");
-  // displayTransactions();
+  localStorage.setItem("transactions", JSON.stringify(transactionData));
+  location.reload();
 });
 
 const cleanupValue = (value) => {

@@ -3,18 +3,21 @@
     "date": "2023-08-17",
     "transactions": [
       {
+        "id": "0001",
         "name": "Dinner Pizza",
         "amount": "28000",
         "type": "expense",
         "catergory": "Home"
       },
       {
+        "id": "0002",
         "name": "Salary ATRO E&M",
         "amount": "2000000",
         "type": "income",
         "catergory": "Income"
       },
       {
+        "id": "0003",
         "name": "Lunch",
         "amount": "5000",
         "type": "expense",
@@ -26,18 +29,21 @@
     "date": "2023-08-16",
     "transactions": [
       {
+        "id": "0004",
         "name": "Boda",
         "amount": "2000",
         "type": "expense",
         "catergory": "Transport"
       },
       {
+        "id": "0005",
         "name": "Shoe repair",
         "amount": "2000",
         "type": "expense",
         "catergory": "Miscellaneous"
       },
       {
+        "id": "0006",
         "name": "Lunch",
         "amount": "5000",
         "type": "expense",
@@ -49,12 +55,14 @@
     "date": "2023-08-15",
     "transactions": [
       {
+        "id": "0007",
         "name": "Internet",
         "amount": "224000",
         "type": "expense",
         "catergory": "Home"
       },
       {
+        "id": "0008",
         "name": "Lunch",
         "amount": "5000",
         "type": "expense",
